@@ -1,0 +1,103 @@
+<!-- Start of signup --><script language="javascript">
+<!--
+
+  window.onload = function() {
+  onPageLoad();
+};
+
+function onPageLoad() {
+  document.getElementById("non_gdpr_checkbox").checked = true;
+}
+
+function gdpr_check() {
+  var consentCheckbox = document.getElementById('consent_checkbox');
+  var isChecked = document.getElementById('consent_checkbox').checked;
+
+  if (isChecked == true) {
+    document.getElementById('gdpr_checkbox').checked = true;
+    document.getElementById('non_gdpr_checkbox').checked = false;
+  }
+  else {
+    document.getElementById('gdpr_checkbox').checked = false;
+    document.getElementById('non_gdpr_checkbox').checked = true;
+  }
+}
+
+var els = frm.getElementsByTagName('input');
+for (var i = 0; i < els.length; i++)
+{
+  if (els[i].className == 'text' || els[i].className == 'date' || els[i].className == 'number')
+  {
+    if (els[i].value == '')
+      errorString = 'Please complete all required fields.';
+  }
+  else if (els[i].className == 'radio')
+  {
+    var toCheck = document.getElementsByName(els[i].name);
+    var radioChecked = false;
+    for (var j = 0; j < toCheck.length; j++)
+    {
+      if (toCheck[j].name == els[i].name && toCheck[j].checked)
+        radioChecked = true;
+    }
+    if (!radioChecked)
+      errorString = 'Please complete all required fields.';
+  }
+}
+
+//-->
+</script>
+<p>&nbsp;</p>
+
+<div class="gated-resource-wrapper">
+	<div class="resource-link hidden"><a href="">Download Now</a></div>
+
+	<form action="" id="signup" method="post" name="signup"><input name="ci_isconsentform" type="hidden" value="true" /> <!-- UserID - required field, do not remove --> <input name="userid" type="hidden" value="50454" /><!-- Email - the users email address -->
+		<table>
+			<tbody>
+				<tr>
+					<td>Email Address<br />
+						<input id="email" name="Email" type="text" /></td>
+				</tr>
+				<tr>
+					<td>First Name<br />
+						<input class="text" name="cd_FIRSTNAME" type="text" /></td>
+				</tr>
+				<tr>
+					<td>Last Name<br />
+						<input class="text" name="cd_LASTNAME" type="text" /></td>
+				</tr>
+				<tr>
+					<td>Country<br />
+						<input class="text" name="cd_COUNTRY" type="text" /></td>
+				</tr>
+			</tbody>
+		</table>
+		<input name="ci_userConsentText" type="hidden" value="By+ticking+this+box%2c+you+consent+to+receiving+promotional+emails+about+our+products.+This+is+optional." />
+		<p><input id="consent_checkbox" name="ci_userConsentCheckBox" onclick="gdpr_check()" type="checkbox" /> By ticking this box, you consent to receiving promotional emails about our products. This is optional.</p>
+
+		<p><input name="addressbook_39134597" type="checkbox" value="Blog Subscription" /> <input id="ci_consenturl" name="ci_consenturl" type="hidden" />Opt in to receive blog updates.</p>
+
+		<table style="display: none">
+			<tbody>
+				<tr>
+					<td>Gated Resource Sign Up</td>
+					<td><input id="gdpr_checkbox" name="addressbook_38986234" type="checkbox" /></td>
+				</tr>
+				<tr>
+					<td>Gated Resource Non GDPR</td>
+					<td><input id="non_gdpr_checkbox" name="addressbook_38986268" type="checkbox" /></td>
+				</tr>
+			</tbody>
+		</table>
+
+		<p><input class="fancy-button" id="download" name="Submit" type="Submit" value="Confirm" /></p>
+	</form>
+</div>
+<script language="javascript">
+var urlInput = document.getElementById("ci_consenturl");
+
+if (urlInput != null && urlInput != 'undefined') {
+  urlInput.value = encodeURI(window.location.href);
+}
+</script><!-- End of signup -->
