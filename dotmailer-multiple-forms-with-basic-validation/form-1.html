@@ -1,0 +1,38 @@
+<!-- BEGIN: Dotmailer Opt-in Email List Form -->
+<script language="javascript">
+  <!--
+  function validate_signup(frm) {
+    var emailAddress = frm.Email.value;
+    var errorString = '';
+    if (emailAddress == '' || emailAddress.indexOf('@') == -1) {
+      errorString = 'Please enter your email address';
+    }
+
+    var isError = false;
+    if (errorString.length > 0)
+      isError = true;
+
+    if (isError)
+      alert(errorString);
+    return !isError;
+  }
+
+  //-->
+</script>
+
+<form name="signup" id="newsletter" action="http://dmtrk.net/signup.ashx" method="post" style="margin-bottom: 10px">
+  <div>
+    <input type="hidden" name="addressbookid" value="575982" />
+    <input type="hidden" name="userid" value="50454" />
+    <input type="hidden" name="ReturnURL" value="http://www.hydratight.com/en/subscribe-confirm" />
+
+    <label for="Email" class="sr-only"><?php print t('Your email address'); ?></label>
+    <input id="Email" name="Email" type="text" class="form-text" placeholder="Email Address*" style="background-color: #ffffff;" />
+    <input type="Submit" name="Submit" value="Submit" class="form-submit" />
+    <p><input id="newsletter_consent_checkbox" name="ci_userConsentCheckBox" type="checkbox" /> By ticking this box, you consent to receiving promotional emails about our products. This is optional.</p>
+
+    <input type="hidden" id="double" name="double" value="double" />
+  </div>
+
+</form>
+<!-- END: Dotmailer Opt-in Email List Form -->
