@@ -1,2 +1,2 @@
-# creating-cookies
-Little repo as a reference for creating cookies.
+# Apprenticeship Code Examples
+Repo to hold all my code examples.
